@@ -1,26 +1,25 @@
 import streamlit as st
-from src.engine import SaasEconomicsModel
+from engine import SaasEconomicsModel
 import pandas as pd
 
-# 1. Настройка страницы (уже есть у тебя, оставляем)
+# Настройка страницы
 st.set_page_config(
     page_title="SaaS Profit Simulator",
     page_icon="🚀",
     layout="wide"
 )
 
-# 2. Магия скрытия лишнего (вставляем этот блок)
+# Скрываем меню и подвал Streamlit
 hide_st_style = """
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
-            /* Убираем синюю полоску и лишние отступы сверху */
             [data-testid="stHeader"] {display:none;}
-            .block-container {padding-top: 2rem;}
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
 st.title("📊 SaaS Unit Economics & Profit Simulator")
 st.markdown("""
 This tool simulates the financial path of a SaaS platform based on your business metrics. 
