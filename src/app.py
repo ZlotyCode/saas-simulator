@@ -1,5 +1,5 @@
 import streamlit as st
-from engine import SaasEconomicsModel
+from src.engine import SaasEconomicsModel
 import pandas as pd
 
 # 1. Настройка страницы (уже есть у тебя, оставляем)
