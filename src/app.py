@@ -1,6 +1,13 @@
 import streamlit as st
-from engine import SaasEconomicsModel
+from engine import SaaSEconomicsModel
 import pandas as pd
+
+
+st.set_page_config(
+    page_title="SaaS Profit Simulator",
+    page_icon="🚀",
+    layout="wide"
+)
 
 
 st.title("📊 SaaS Unit Economics & Profit Simulator")
@@ -67,16 +74,3 @@ st.area_chart(df.set_index('Month')['Cumulative_Profit'])
 st.subheader("🎯 Insights")
 
 be_month = df[df['Cumulative_Profit'] >= 0]['Month'].min()
-
-if pd.isna(be_month):
-    st.error(
-        "⚠️ With these settings, your business remains in deficit for at least 24 months. Try reducing CAC or Churn.")
-else:
-    st.success(f"✅ Your business reaches the **Break-Even Point** in month **{int(be_month)}**.")
-
-
-with st.expander("See Raw Simulation Data"):
-    st.dataframe(df.style.format(precision=0), use_container_width=True)
-
-st.markdown("---")
-st.caption("Developed as a Portfolio Project | Unit Economics Simulator v1.0")
