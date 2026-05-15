@@ -2,23 +2,6 @@ import streamlit as st
 from engine import SaasEconomicsModel
 import pandas as pd
 
-# Настройка страницы
-st.set_page_config(
-    page_title="SaaS Profit Simulator",
-    page_icon="🚀",
-    layout="wide"
-)
-
-# Скрываем меню и подвал Streamlit
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            [data-testid="stHeader"] {display:none;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
 
 st.title("📊 SaaS Unit Economics & Profit Simulator")
 st.markdown("""
